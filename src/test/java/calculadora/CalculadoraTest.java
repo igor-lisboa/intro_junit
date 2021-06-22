@@ -1,6 +1,7 @@
 package calculadora;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -48,4 +49,18 @@ public class CalculadoraTest {
 		assertThrows(ArithmeticException.class, () -> calc.divisao(8, 0));
 	}
 
+	@Test
+	public void testaMultiplicacao() {
+		assertEquals(6, calc.multiplicacao(2, 3));
+	}
+
+	@Test
+	public void testaSomatorio() {
+		assertEquals(36, calc.somatoria(8));
+	}
+
+	@Test
+	public void testaEhPositivo() {
+		assertFalse(calc.ehPositivo(-18));
+	}
 }
